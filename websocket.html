@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+	
+<button id="send">发送</button>
+	
+<script type="text/javascript">
+ws = new WebSocket("ws://10.10.0.99:8081");
+ws.onopen = function() {
+	//alert("连接成功");
+	ws.send('tom');
+	//alert("给服务端发送一个字符串：tom");
+};
+ws.onmessage = function(e) {
+	alert("收到服务端的消息：" + e.data);
+};
+
+console.log(ws);
+
+var send = document.getElementById('send');
+send.onclick = function(){
+	ws.send('保持连接，发第二次信息，查看服务器回应');
+}
+
+</script>
+</body>
+</html>
