@@ -3,9 +3,15 @@ namespace app\admin\controller;
 use app\admin\model\User as userModel;
 class User extends Base {
     
+    private $userModel = null;
+    
+    public function _initialize(){
+        parent::_initialize();
+        $this->userModel = new userModel();
+    }
+    
     public function index(){
-    	$userModel = new userModel();
-    	$this->assign('list',$userModel->lists());
+    	$this->assign('list',$this->userModel->lists());
         return $this->fetch();
     }
     
@@ -21,6 +27,20 @@ class User extends Base {
     		}
     		$this->error('设置失败');
     	}
+    }
+    
+    public function adduser(){
+        if ($this->request->isAjax()){
+            $data = input('post.');
+            $result = $this->userModel->add($data);
+            if ($result === true){
+                $this->success('新增管理员成功');
+            }
+            if (!$result) $this->error('新增管理员失败');
+            $this->error($result);
+        }else{
+           return $this->fetch(); 
+        }
     }
     
     //退出系统

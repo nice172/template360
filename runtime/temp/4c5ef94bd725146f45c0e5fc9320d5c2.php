@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\job\template360\public/../application/admin\view\login\index.php";i:1531186483;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\job\template360\public/../application/admin\view\login\index.php";i:1531189937;}*/ ?>
 <!doctype html>
 <html lang="zh-cn">
 <head>
@@ -55,7 +55,7 @@
 <script type="text/javascript" src="/static/layui/layui.all.js"></script>
 <script type="text/javascript">
 $(function(){
-
+	
 	function clickVerify(){
 		var src = $('.verify').attr('src');
 		if(src.indexOf('?') > 0) src = src.split('?')[0];
@@ -87,16 +87,17 @@ $(function(){
 			url:'<?php echo url('dologin'); ?>',
 			data:$('#loginForm').serialize(),
 			success:function(res){
-				layer.msg(res.msg,{shade:0.3,icon:2,shift:6});
 				if(res.data == 1){
 					//clickVerify();
 				}
 				if(res.code == 1) {
-					window.location = res.url;
+					layer.msg(res.msg,{shade:0.3,icon:1,shift:6});
+					setTimeout(function(){window.location = res.url;},1500);
 				}else{
+					layer.msg(res.msg,{shade:0.3,icon:2,shift:6});
 					setTimeout(function(){
 						window.location.reload();
-						},3000);
+						},2000);
 				}
 			}
 		});

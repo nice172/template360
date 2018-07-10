@@ -7,10 +7,17 @@ use app\admin\model\User;
 // 后台登录控制器
 class Login extends Controller {
     
+    /**
+     * 登录页面
+     * @return mixed|string
+     */
     public function index(){
         return $this->fetch();
     }
     
+    /**
+     * 登录
+     */
     public function dologin(){
         if ($this->request->isAjax()){
             $data = $this->request->post();
@@ -27,7 +34,7 @@ class Login extends Controller {
             $verify = new Captcha();
             if (!$verify->check($data['verifycode'])) $this->error('请输入正确的验证码','',1);
             $userModel = new User();
-            $user = $userModel->find($data);
+            $user = $userModel->find(['username' => $data['username']]);
             if (empty($user) || $user['password'] != md5($data['password'].$user['passsalt'])){
                 $this->error('登录失败，请重试');
             }
@@ -42,14 +49,12 @@ class Login extends Controller {
         }
     }
     
-    //生成验证码
+    /**
+     * 生成验证码
+     * @return \think\Response
+     */
     public function verify(){
-        $verify = new Captcha([
-            'imageH' => 35,
-            'imageW' => 140,
-            'fontSize' => 16,
-            'codeSet' => '1234567890ABCDE']);
-        return $verify->entry();
+        return create_code();
     }
     
 }

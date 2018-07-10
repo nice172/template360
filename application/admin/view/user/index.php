@@ -4,7 +4,9 @@
   <div class="layui-row layui-col-space15">
     <div class="layui-col-md12">
       <div class="layui-card">
-        <div class="layui-card-header">管理员列表</div>
+        <div class="layui-card-header layuiadmin-card-header-auto">
+              <button class="layui-btn layui-btn-primary openWindow" window-size="400,450" url="{:url('adduser')}" data-type="add">新增管理员</button>
+         </div>
         <div class="layui-card-body">
           
 <table class="layui-table layui-form">
@@ -76,6 +78,7 @@
 			}
 		});
 	});
+
 
 
 </script>

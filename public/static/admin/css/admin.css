@@ -3,9 +3,36 @@
     margin: 0px;
 }
 body{
-    background: #ffffff;
+    background: #f2f2f2;
     font-size:12px;
     color: #666;
 }
 .layui-logo {font-size: 24px !important;color: #ffffff !important;}
 
+.layadmin-header {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+.layadmin-header .layui-breadcrumb {
+    border-top: 1px solid #f6f6f6;
+    padding: 0 15px;
+}
+.layuiadmin-card-header-auto {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.layui-layer-title{
+    /* background-color: #23262E !important;
+    color: #ffffff !important; */
+}
+.layui-layer-setwin .layui-layer-min cite {
+    /* background-color: #ffffff !important; */
+}
+.layer-body-main{
+    top:20px !important;
+    bottom: 0px !important;
+    left: 0 !important;
+}
