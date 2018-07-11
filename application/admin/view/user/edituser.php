@@ -8,28 +8,29 @@
 {/block}
 {block name="main"}
 <form class="layui-form" action="" lay-filter="example">
+	<input type="hidden" value="{$info.id}" name="id" />
   <div class="layui-form-item">
     <label class="layui-form-label">用户名</label>
     <div class="layui-input-block">
-      <input type="text" name="username" lay-verify="username" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+      <input type="text" name="username" value="{$info.username}" lay-verify="username" autocomplete="off" placeholder="请输入用户名" class="layui-input">
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">密码</label>
     <div class="layui-input-block">
-      <input type="password" name="password" lay-verify="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+      <input type="password" name="password" lay-verify="password" placeholder="密码留则不修改" autocomplete="off" class="layui-input">
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">邮箱</label>
     <div class="layui-input-block">
-      <input type="text" name="email" lay-verify="inputemail|email" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
+      <input type="text" name="email" value="{$info.email}" lay-verify="inputemail|email" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">手机号码</label>
     <div class="layui-input-block">
-      <input type="text" name="mobile" lay-verify="inputPhone|phone" autocomplete="off" placeholder="请输入手机号码" class="layui-input">
+      <input type="text" name="mobile" value="{$info.mobile}" lay-verify="inputPhone|phone" autocomplete="off" placeholder="请输入手机号码" class="layui-input">
     </div>
   </div>
   <div class="layui-form-item">
@@ -45,7 +46,7 @@
   <div class="layui-form-item">
     <label class="layui-form-label">状态</label>
     <div class="layui-input-block">
-      <input type="checkbox" checked="checked" value="1" name="status" lay-skin="switch" lay-text="开启|禁用">
+      <input type="checkbox" {if condition="$info['status']"}checked="checked"{/if} value="1" name="status" lay-skin="switch" lay-text="开启|禁用">
     </div>
   </div>
   
@@ -68,7 +69,12 @@ var layedit = layui.layedit;
         return '请输入用户名';
       }
     },
-    password: [/(.+){6,12}$/, '密码至少6位'],
+    password: function(value, item){
+		var pattern = /(.+){6,12}$/;
+		if(value.length != 0){
+			if(!pattern.test(value)) return '密码至少6位';
+		}
+    },
     inputemail: function(value,item){
 		if(value.length <= 0) return '请输入邮箱';
     },
@@ -93,10 +99,11 @@ var layedit = layui.layedit;
 //     layer.alert(JSON.stringify(data.field), {
 //       title: '最终的提交信息'
 //     })
-	$.post("{:url('adduser')}",data.field,function(res){
+	$.post("{:url('edituser')}",data.field,function(res){
 		if(res.code == 1){
 			closeWin();
-			showMsg(res.msg,1);
+			showMsg(res.msg,1,1);
+			setTimeout(() => {parent.window.location.reload();},2000);
 		}else{
 			showMsg(res.msg,2);
 		}

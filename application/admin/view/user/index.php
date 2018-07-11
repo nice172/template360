@@ -14,6 +14,7 @@
     <tr>
       <th>ID</th>
       <th>用户名</th>
+      <th>所属分组</th>
       <th>邮箱</th>
       <th>最后登录IP</th>
       <th>最后登录时间</th>
@@ -28,22 +29,30 @@
     <tr>
       <td>{$v.id}</td>
       <td>{$v.username}</td>
+      <td>{if condition="$v['id']==1"}超级管理员{else}普通管理员{/if}</td>
       <td>{$v.email}</td>
       <td>{$v.last_login_ip}</td>
       <td>{$v.last_login_time|date='Y-m-d H:i:s',###}</td>
       <th>
        {if condition="$v['status']"}
-       <input type="checkbox"  value="{$v['id']}" checked="checked" name="open" lay-skin="switch" lay-filter="switchTest" title="开启">
+       <input type="checkbox" {if condition="$v['id']==1"}disabled="disabled"{/if}  value="{$v['id']}" checked="checked" name="open" lay-skin="switch" lay-filter="switchTest" title="开启">
        {else}
-       <input type="checkbox" {if condition="$v['id'] == 1"}disabled="disabled"{/if} value="{$v['id']}" name="open" lay-skin="switch" lay-filter="switchTest" title="禁用">
+       <input type="checkbox" value="{$v['id']}" name="open" lay-skin="switch" lay-filter="switchTest" title="禁用">
        {/if}
       </th>
       <td>{$v.register_ip}</td>
       <td>{$v.add_time|date='Y-m-d H:i:s',###}</td>
       <td>
-      <button class="layui-btn layui-btn-primary layui-btn-xs">查看</button>
-    <button class="layui-btn layui-btn-xs">编辑</button>
-    <button class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+    	{if condition="$user['id']!=1 && $v['id']==1"}
+    	<button class="layui-btn layui-btn-disabled layui-btn-xs">编辑</button>
+    	{else}
+    	<button class="layui-btn layui-btn-xs openWindow" window-size="400,450" url="{:url('edituser',['id' => $v['id']])}">编辑</button>
+    	{/if}
+    	{if condition="$v['id']==1"}
+    	<button class="layui-btn layui-btn-disabled layui-btn-xs">删除</button>
+      	{else}
+      	<button class="layui-btn layui-btn-danger layui-btn-xs ajax-confirm" url="{:url('delete',['id' => $v['id']])}">删除</button>
+      	{/if}
       </td>
     </tr>
    {/foreach}

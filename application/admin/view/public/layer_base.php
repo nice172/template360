@@ -38,5 +38,11 @@ layui.use('element', function(){
 });
 </script>
 {block name="script"}{/block}
+<script>
+{if condition="isset($close)"}
+showMsg('{$msg}',2);
+closeWin();
+{/if}
+</script>
 </body>
 </html>

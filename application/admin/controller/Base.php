@@ -8,6 +8,8 @@ use app\admin\model\User as userModel;
 
 class Base extends Controller {
     
+    protected $user;
+    
     //初始化
     public function _initialize(){
         parent::_initialize();
@@ -27,6 +29,7 @@ class Base extends Controller {
             $this->redirect(url('Login/index'));
             exit;
         }
+        $this->user = $user;
         $this->assign('user',$user);
     }
     

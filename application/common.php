@@ -1,5 +1,12 @@
 <?php
 
+function p($data){
+    header('Content-Type:text/html;charset=utf-8');
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+}
+
 /**
  * 生成加密盐
  * @return string

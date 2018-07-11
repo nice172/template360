@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"E:\job\template360\public/../application/admin\view\user\index.php";i:1531289232;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531293051;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"E:\job\template360\public/../application/admin\view\menu\add.php";i:1531303140;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531293051;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,8 @@
 <title>Template360后台管理</title>
 <link rel="stylesheet" href="/static/layui/css/layui.css">
 <link rel="stylesheet" href="/static/admin/css/admin.css">
+
+<style>/*.layui-form-select{width:300px;}*/.layui-word-aux-left{margin-left:110px;}</style>
 
 <!--[if lt IE 9]>
   <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -88,70 +90,116 @@
     <!-- 内容主体区域 -->
     <div style="padding: 15px;">
     
-
+<form class="layui-form" action="">
   <div class="layui-row layui-col-space15">
-    <div class="layui-col-md12">
+	
+    <div class="layui-col-md6">
       <div class="layui-card">
-        <div class="layui-card-header layuiadmin-card-header-auto">
-              <button class="layui-btn layui-btn-primary openWindow" window-size="400,450" url="<?php echo url('adduser'); ?>" data-type="add">新增管理员</button>
-         </div>
+        <div class="layui-card-header">菜单配置</div>
         <div class="layui-card-body">
-          
-<table class="layui-table layui-form">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>用户名</th>
-      <th>所属分组</th>
-      <th>邮箱</th>
-      <th>最后登录IP</th>
-      <th>最后登录时间</th>
-      <th>状态</th>
-      <th>注册IP</th>
-      <th>新增时间</th>
-      <th>操作</th>
-    </tr> 
-  </thead>
-  <tbody>
-  <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$v): ?>
-    <tr>
-      <td><?php echo $v['id']; ?></td>
-      <td><?php echo $v['username']; ?></td>
-      <td><?php if($v['id']==1): ?>超级管理员<?php else: ?>普通管理员<?php endif; ?></td>
-      <td><?php echo $v['email']; ?></td>
-      <td><?php echo $v['last_login_ip']; ?></td>
-      <td><?php echo date('Y-m-d H:i:s',$v['last_login_time']); ?></td>
-      <th>
-       <?php if($v['status']): ?>
-       <input type="checkbox" <?php if($v['id']==1): ?>disabled="disabled"<?php endif; ?>  value="<?php echo $v['id']; ?>" checked="checked" name="open" lay-skin="switch" lay-filter="switchTest" title="开启">
-       <?php else: ?>
-       <input type="checkbox" value="<?php echo $v['id']; ?>" name="open" lay-skin="switch" lay-filter="switchTest" title="禁用">
-       <?php endif; ?>
-      </th>
-      <td><?php echo $v['register_ip']; ?></td>
-      <td><?php echo date('Y-m-d H:i:s',$v['add_time']); ?></td>
-      <td>
-    	<?php if($user['id']!=1 && $v['id']==1): ?>
-    	<button class="layui-btn layui-btn-disabled layui-btn-xs">编辑</button>
-    	<?php else: ?>
-    	<button class="layui-btn layui-btn-xs openWindow" window-size="400,450" url="<?php echo url('edituser',['id' => $v['id']]); ?>">编辑</button>
-    	<?php endif; if($v['id']==1): ?>
-    	<button class="layui-btn layui-btn-disabled layui-btn-xs">删除</button>
-      	<?php else: ?>
-      	<button class="layui-btn layui-btn-danger layui-btn-xs ajax-confirm" url="<?php echo url('delete',['id' => $v['id']]); ?>">删除</button>
-      	<?php endif; ?>
-      </td>
-    </tr>
-   <?php endforeach; endif; else: echo "" ;endif; ?>
-  </tbody>
-</table>
-          
-          
-        </div>
-      </div>
+        
+<div class="layui-form-item">
+    <label class="layui-form-label">上级菜单</label>
+    <div class="layui-input-block">
+      <select name="city" lay-verify="required">
+      	<option value=""></option>
+        <?php echo $select_category; ?>
+      </select>
     </div>
   </div>
 
+  <div class="layui-form-item">
+    <label class="layui-form-label">菜单名称</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item" style="margin-bottom: 9px;">
+    <label class="layui-form-label">应用</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+    </div>
+    <div class="layui-form-mid layui-word-aux layui-word-aux-left" style="padding:5px 0px !important;">如：admin</div>
+  </div>
+    <div class="layui-form-item">
+    <label class="layui-form-label">控制器</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+    <div class="layui-form-item">
+    <label class="layui-form-label">方法名称</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">参数状态</div>
+        <div class="layui-card-body">
+<div class="layui-form-item">
+    <label class="layui-form-label">参数</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+    </div>
+    <div class="layui-form-mid layui-word-aux layui-word-aux-left">例:id=3&p=3</div>
+  </div>
+        <div class="layui-form-item">
+    <label class="layui-form-label">图标</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+    </div>
+    <div class="layui-form-mid layui-word-aux layui-word-aux-left">不带前缀layui-icon，如layui-icon-user => user</div>
+  </div>
+  
+  <div class="layui-form-item">
+    <label class="layui-form-label">状态</label>
+    <div class="layui-input-block">
+      <input type="checkbox" name="status" lay-skin="switch">
+    </div>
+  </div>
+         <div class="layui-form-item">
+    <label class="layui-form-label">类型</label>
+    <div class="layui-input-block">
+      <input type="radio" name="type" value="1" title="有界面可访问菜单" checked>
+      <input type="radio" name="type" value="2" title="无界面可访问菜单">
+      <input type="radio" name="type" value="0" title="只作为菜单">
+    </div>
+  </div> 
+
+        </div>
+      </div>
+    </div>
+
+<div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header">备注信息</div>
+        <div class="layui-card-body">
+  <div class="layui-form-item layui-form-text">
+    <div class="layui-input-block">
+      <textarea name="remark" placeholder="请输入备注信息255字内" style="resize: none;" class="layui-textarea"></textarea>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+</form>
 
     </div>
   </div>
@@ -171,7 +219,13 @@ layui.use('element', function(){
 });
 </script>
 
+
 <script>
+
+$(function(){
+
+});
+
 //监听指定开关
 	var form = layui.form;
 	form.on('switch(switchTest)', function(data){

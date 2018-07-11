@@ -38,6 +38,7 @@ class Login extends Controller {
             if (empty($user) || $user['password'] != md5($data['password'].$user['passsalt'])){
                 $this->error('登录失败，请重试');
             }
+            if (!$user['status']) $this->error('用户被禁止登录');
             $admin_user = ['id' => $user->id,'username' => $user['username']];
             $status = $userModel->loginUpdate($user->id, ['last_login_time' => time(),'last_login_ip' => $this->request->ip()]);
             session('admin_user',$admin_user);

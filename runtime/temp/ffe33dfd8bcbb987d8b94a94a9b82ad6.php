@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"E:\job\template360\public/../application/admin\view\user\index.php";i:1531289232;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531293051;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"E:\job\template360\public/../application/admin\view\menu\index.php";i:1531300104;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531293051;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,8 @@
 <title>Template360后台管理</title>
 <link rel="stylesheet" href="/static/layui/css/layui.css">
 <link rel="stylesheet" href="/static/admin/css/admin.css">
+
+<link rel="stylesheet" href="/static/js/treeTable/css/jquery.treetable.css" />
 
 <!--[if lt IE 9]>
   <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -93,56 +95,23 @@
     <div class="layui-col-md12">
       <div class="layui-card">
         <div class="layui-card-header layuiadmin-card-header-auto">
-              <button class="layui-btn layui-btn-primary openWindow" window-size="400,450" url="<?php echo url('adduser'); ?>" data-type="add">新增管理员</button>
+              <button class="layui-btn layui-btn-primary" onclick="window.location.href='<?php echo url('add'); ?>'" data-type="add">添加菜单</button>
          </div>
         <div class="layui-card-body">
           
-<table class="layui-table layui-form">
+<table class="layui-table layui-form" id="treeTable">
   <thead>
     <tr>
+      <th>排序</th>
       <th>ID</th>
-      <th>用户名</th>
-      <th>所属分组</th>
-      <th>邮箱</th>
-      <th>最后登录IP</th>
-      <th>最后登录时间</th>
+      <th>菜单名称</th>
+      <th>URL</th>
       <th>状态</th>
-      <th>注册IP</th>
-      <th>新增时间</th>
       <th>操作</th>
     </tr> 
   </thead>
   <tbody>
-  <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$v): ?>
-    <tr>
-      <td><?php echo $v['id']; ?></td>
-      <td><?php echo $v['username']; ?></td>
-      <td><?php if($v['id']==1): ?>超级管理员<?php else: ?>普通管理员<?php endif; ?></td>
-      <td><?php echo $v['email']; ?></td>
-      <td><?php echo $v['last_login_ip']; ?></td>
-      <td><?php echo date('Y-m-d H:i:s',$v['last_login_time']); ?></td>
-      <th>
-       <?php if($v['status']): ?>
-       <input type="checkbox" <?php if($v['id']==1): ?>disabled="disabled"<?php endif; ?>  value="<?php echo $v['id']; ?>" checked="checked" name="open" lay-skin="switch" lay-filter="switchTest" title="开启">
-       <?php else: ?>
-       <input type="checkbox" value="<?php echo $v['id']; ?>" name="open" lay-skin="switch" lay-filter="switchTest" title="禁用">
-       <?php endif; ?>
-      </th>
-      <td><?php echo $v['register_ip']; ?></td>
-      <td><?php echo date('Y-m-d H:i:s',$v['add_time']); ?></td>
-      <td>
-    	<?php if($user['id']!=1 && $v['id']==1): ?>
-    	<button class="layui-btn layui-btn-disabled layui-btn-xs">编辑</button>
-    	<?php else: ?>
-    	<button class="layui-btn layui-btn-xs openWindow" window-size="400,450" url="<?php echo url('edituser',['id' => $v['id']]); ?>">编辑</button>
-    	<?php endif; if($v['id']==1): ?>
-    	<button class="layui-btn layui-btn-disabled layui-btn-xs">删除</button>
-      	<?php else: ?>
-      	<button class="layui-btn layui-btn-danger layui-btn-xs ajax-confirm" url="<?php echo url('delete',['id' => $v['id']]); ?>">删除</button>
-      	<?php endif; ?>
-      </td>
-    </tr>
-   <?php endforeach; endif; else: echo "" ;endif; ?>
+  <?php echo $category; ?>
   </tbody>
 </table>
           
@@ -171,7 +140,31 @@ layui.use('element', function(){
 });
 </script>
 
+<script type="text/javascript" src="/static/js/treeTable/jquery.treetable.js"></script>
 <script>
+
+$(function(){
+
+	　$("#treeTable").treetable({ 
+		expandable: true,
+		stringCollapse: '收起',
+		stringExpand:'展开',
+		clickableNodeNames: false,
+		expandable: true,
+		expanderTemplate:'<i class="layui-icon layui-icon-triangle-r" style="cursor:pointer;"></i>' });
+	 $('body').on('click','#treeTable .indenter i',function(){
+		 
+		 if($(this).hasClass('layui-icon-triangle-r')){
+			 $(this).removeClass('layui-icon-triangle-r');
+			 $(this).addClass('layui-icon-triangle-d');
+			 }else{
+				 $(this).removeClass('layui-icon-triangle-d');
+				 $(this).addClass('layui-icon-triangle-r');
+		}
+	 });
+	
+});
+
 //监听指定开关
 	var form = layui.form;
 	form.on('switch(switchTest)', function(data){
