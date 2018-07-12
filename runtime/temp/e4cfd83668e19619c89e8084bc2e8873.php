@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"E:\job\template360\public/../application/admin\view\menu\add.php";i:1531303140;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531293051;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"E:\job\template360\public/../application/admin\view\menu\add.php";i:1531374692;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531293051;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,8 +101,8 @@
 <div class="layui-form-item">
     <label class="layui-form-label">上级菜单</label>
     <div class="layui-input-block">
-      <select name="city" lay-verify="required">
-      	<option value=""></option>
+      <select name="city">
+      	<option value="">顶级菜单</option>
         <?php echo $select_category; ?>
       </select>
     </div>
@@ -111,26 +111,26 @@
   <div class="layui-form-item">
     <label class="layui-form-label">菜单名称</label>
     <div class="layui-input-block">
-      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+      <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
     </div>
   </div>
   <div class="layui-form-item" style="margin-bottom: 9px;">
     <label class="layui-form-label">应用</label>
     <div class="layui-input-block">
-      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+      <input type="text" name="app" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux layui-word-aux-left" style="padding:5px 0px !important;">如：admin</div>
   </div>
     <div class="layui-form-item">
     <label class="layui-form-label">控制器</label>
     <div class="layui-input-block">
-      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+      <input type="text" name="controller" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
     </div>
   </div>
     <div class="layui-form-item">
     <label class="layui-form-label">方法名称</label>
     <div class="layui-input-block">
-      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+      <input type="text" name="action" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
     </div>
   </div>
 
@@ -147,14 +147,14 @@
 <div class="layui-form-item">
     <label class="layui-form-label">参数</label>
     <div class="layui-input-block">
-      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+      <input type="text" name="param" placeholder="请输入标题" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux layui-word-aux-left">例:id=3&p=3</div>
   </div>
         <div class="layui-form-item">
     <label class="layui-form-label">图标</label>
     <div class="layui-input-block">
-      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+      <input type="text" name="icon" placeholder="请输入标题" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux layui-word-aux-left">不带前缀layui-icon，如layui-icon-user => user</div>
   </div>
@@ -228,24 +228,18 @@ $(function(){
 
 //监听指定开关
 	var form = layui.form;
-	form.on('switch(switchTest)', function(data){
-		if(this.checked){
-			var status = 1;
-		}else{
-			var status = 0;
-		}
-		$.ajax({
-			url:'<?php echo url("status"); ?>',type:'POST',
-			data:{id:data.value,status:status},success: function(res){
-				if(res.code == 0){
-					$(data.othis).addClass('layui-form-onswitch');
-					layer.msg(res.msg,{shade:0.3,icon:2,shift:6});
-					}
+	form.on('submit(formDemo)', function(data){
+		$.post("<?php echo url('doadd'); ?>",data.field,function(res){
+			if(res.code == 1){
+				showMsg(res.msg,1,1);
+				setTimeout(() => {parent.window.location.reload();},2000);
+			}else{
+				showMsg(res.msg,2);
 			}
 		});
+
+	    return false;
 	});
-
-
 
 </script>
 

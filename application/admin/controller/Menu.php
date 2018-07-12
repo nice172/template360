@@ -119,16 +119,14 @@ class Menu extends Base {
      *     'param'  => ''
      * )
      */
-    public function addPost()
-    {
-        if ($this->request->isPost()) {
+    public function doadd(){
+        if ($this->request->isAjax()) {
             $result = $this->validate($this->request->param(), 'AdminMenu');
             if ($result !== true) {
                 $this->error($result);
             } else {
                 $data = $this->request->param();
                 Db::name('AdminMenu')->strict(false)->field(true)->insert($data);
-
                 $app          = $this->request->param("app");
                 $controller   = $this->request->param("controller");
                 $action       = $this->request->param("action");
@@ -151,8 +149,8 @@ class Menu extends Base {
                     ]);
                 }
                 $sessionAdminMenuIndex = session('admin_menu_index');
-                $to                    = empty($sessionAdminMenuIndex) ? "Menu/index" : $sessionAdminMenuIndex;
-                $this->_exportAppMenuDefaultLang();
+                $to = empty($sessionAdminMenuIndex) ? "Menu/index" : $sessionAdminMenuIndex;
+                //$this->_exportAppMenuDefaultLang();
                 cache(null, 'admin_menus');// 删除后台菜单缓存
                 $this->success("添加成功！", url($to));
             }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"E:\job\template360\public/../application/admin\view\index\index.php";i:1531186483;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531193304;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"E:\job\template360\public/../application/admin\view\index\index.php";i:1531186483;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531293051;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,7 +57,7 @@
         <li class="layui-nav-item layui-nav-itemed">
           <a class="" href="javascript:;">基本设置</a>
           <dl class="layui-nav-child">
-            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="<?php echo url('Menu/index'); ?>">菜单管理</a></dd>
             <dd><a href="javascript:;">列表二</a></dd>
             <dd><a href="javascript:;">列表三</a></dd>
             <dd><a href="">超链接</a></dd>

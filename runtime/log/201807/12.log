@@ -1,0 +1,912 @@
+---------------------------------------------------------------
+[ 2018-07-12T11:50:42+08:00 ] 10.10.0.99 GET /
+[ info ] 10.10.0.99:8365/ [运行时间：0.435063s][吞吐率：2.30req/s] [内存消耗：1,622.75kb] [文件加载：43]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\job\template360\application\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-12T11:50:45+08:00 ] 10.10.0.99 GET /admin
+[ info ] 10.10.0.99:8365/admin [运行时间：0.126876s][吞吐率：7.88req/s] [内存消耗：1,711.66kb] [文件加载：49]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-12T11:50:45+08:00 ] 10.10.0.99 GET /admin/login/index.html
+[ info ] 10.10.0.99:8365/admin/login/index.html [运行时间：0.077631s][吞吐率：12.88req/s] [内存消耗：1,696.13kb] [文件加载：47]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ E:\job\template360\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\login\index.php [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-12T11:50:46+08:00 ] 10.10.0.99 GET /admin/login/verify.html
+[ info ] 10.10.0.99:8365/admin/login/verify.html [运行时间：0.393302s][吞吐率：2.54req/s] [内存消耗：1,689.84kb] [文件加载：46]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\job\template360\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-12T11:51:24+08:00 ] 10.10.0.99 POST /admin/login/dologin.html
+[ info ] 10.10.0.99:8365/admin/login/dologin.html [运行时间：0.246941s][吞吐率：4.05req/s] [内存消耗：2,985.41kb] [文件加载：61]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/login/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://10.10.0.99:8365',
+  'accept' => '*/*',
+  'content-length' => '90',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+)
+[ info ] [ PARAM ] array (
+  '__token__' => '93d93d9a119b0ae07a26f7957f4965fe',
+  'username' => 'admin',
+  'password' => '123456',
+  'verifycode' => '31a79',
+)
+[ info ] [ RUN ] app\admin\controller\Login->dologin[ E:\job\template360\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014996s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.026629s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000791s ]
+[ sql ] [ SQL ] UPDATE `tpl_user`  SET `last_login_time`=1531367484,`last_login_ip`='10.10.0.99'  WHERE  `id` = 1 [ RunTime:0.035609s ]
+---------------------------------------------------------------
+[ 2018-07-12T11:51:26+08:00 ] 10.10.0.99 GET /admin/index/index.html
+[ info ] 10.10.0.99:8365/admin/index/index.html [运行时间：0.111428s][吞吐率：8.97req/s] [内存消耗：2,981.39kb] [文件加载：59]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\job\template360\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\index\index.php [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001245s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.002496s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000677s ]
+---------------------------------------------------------------
+[ 2018-07-12T11:51:32+08:00 ] 10.10.0.99 GET /admin/user/index.html
+[ info ] 10.10.0.99:8365/admin/user/index.html [运行时间：0.133864s][吞吐率：7.47req/s] [内存消耗：2,881.30kb] [文件加载：57]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->index[ E:\job\template360\application\admin\controller\User.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\user\index.php [ array (
+  0 => 'user',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001928s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.002453s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` ORDER BY `id` ASC [ RunTime:0.000683s ]
+---------------------------------------------------------------
+[ 2018-07-12T11:51:34+08:00 ] 10.10.0.99 GET /admin/user/adduser.html
+[ info ] 10.10.0.99:8365/admin/user/adduser.html [运行时间：0.090093s][吞吐率：11.10req/s] [内存消耗：2,852.13kb] [文件加载：57]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'adduser',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->adduser[ E:\job\template360\application\admin\controller\User.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\user\adduser.php [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001594s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.002474s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000956s ]
+---------------------------------------------------------------
+[ 2018-07-12T11:51:37+08:00 ] 10.10.0.99 GET /admin/menu/index.html
+[ info ] 10.10.0.99:8365/admin/menu/index.html [运行时间：0.279715s][吞吐率：3.58req/s] [内存消耗：3,329.45kb] [文件加载：58]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->index[ E:\job\template360\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\menu\index.php [ array (
+  0 => 'user',
+  1 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010192s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.003239s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_admin_menu` [ RunTime:0.033285s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_admin_menu` ORDER BY `list_order` ASC [ RunTime:0.001736s ]
+---------------------------------------------------------------
+[ 2018-07-12T11:51:40+08:00 ] 10.10.0.99 GET /admin/menu/add.html
+[ info ] 10.10.0.99:8365/admin/menu/add.html [运行时间：0.122411s][吞吐率：8.17req/s] [内存消耗：3,117.07kb] [文件加载：58]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/menu/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->add[ E:\job\template360\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\menu\add.php [ array (
+  0 => 'user',
+  1 => 'select_category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001355s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.002301s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_admin_menu` [ RunTime:0.003204s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_admin_menu` ORDER BY `list_order` ASC [ RunTime:0.001704s ]
+---------------------------------------------------------------
+[ 2018-07-12T13:27:16+08:00 ] 10.10.0.99 GET /admin/menu/add.html
+[ info ] 10.10.0.99:8365/admin/menu/add.html [运行时间：0.048203s][吞吐率：20.75req/s] [内存消耗：1,812.71kb] [文件加载：49]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/menu/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-12T13:27:16+08:00 ] 10.10.0.99 GET /admin/login/index.html
+[ info ] 10.10.0.99:8365/admin/login/index.html [运行时间：0.037334s][吞吐率：26.79req/s] [内存消耗：1,696.52kb] [文件加载：47]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/menu/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ E:\job\template360\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\login\index.php [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-12T13:27:16+08:00 ] 10.10.0.99 GET /admin/login/verify.html
+[ info ] 10.10.0.99:8365/admin/login/verify.html [运行时间：0.118293s][吞吐率：8.45req/s] [内存消耗：1,689.58kb] [文件加载：46]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ E:\job\template360\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-07-12T13:27:36+08:00 ] 10.10.0.99 POST /admin/login/dologin.html
+[ info ] 10.10.0.99:8365/admin/login/dologin.html [运行时间：0.153144s][吞吐率：6.53req/s] [内存消耗：2,985.02kb] [文件加载：61]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/login/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://10.10.0.99:8365',
+  'accept' => '*/*',
+  'content-length' => '90',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+)
+[ info ] [ PARAM ] array (
+  '__token__' => '3a1ece92c8fc88d98d31fda6593867f0',
+  'username' => 'admin',
+  'password' => '123456',
+  'verifycode' => '636a7',
+)
+[ info ] [ RUN ] app\admin\controller\Login->dologin[ E:\job\template360\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001610s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.002541s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000762s ]
+[ sql ] [ SQL ] UPDATE `tpl_user`  SET `last_login_time`=1531373256,`last_login_ip`='10.10.0.99'  WHERE  `id` = 1 [ RunTime:0.073865s ]
+---------------------------------------------------------------
+[ 2018-07-12T13:27:38+08:00 ] 10.10.0.99 GET /admin/index/index.html
+[ info ] 10.10.0.99:8365/admin/index/index.html [运行时间：0.073371s][吞吐率：13.63req/s] [内存消耗：2,832.81kb] [文件加载：57]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\job\template360\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\index\index.php [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010494s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.002355s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000926s ]
+---------------------------------------------------------------
+[ 2018-07-12T13:27:41+08:00 ] 10.10.0.99 GET /admin/menu/index.html
+[ info ] 10.10.0.99:8365/admin/menu/index.html [运行时间：0.122476s][吞吐率：8.16req/s] [内存消耗：3,329.20kb] [文件加载：58]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->index[ E:\job\template360\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\menu\index.php [ array (
+  0 => 'user',
+  1 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001273s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.002062s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_admin_menu` [ RunTime:0.001961s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_admin_menu` ORDER BY `list_order` ASC [ RunTime:0.001805s ]
+---------------------------------------------------------------
+[ 2018-07-12T13:29:42+08:00 ] 10.10.0.99 GET /admin/menu/add.html
+[ info ] 10.10.0.99:8365/admin/menu/add.html [运行时间：0.085128s][吞吐率：11.75req/s] [内存消耗：3,116.80kb] [文件加载：58]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/menu/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->add[ E:\job\template360\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\menu\add.php [ array (
+  0 => 'user',
+  1 => 'select_category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001470s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.003244s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000970s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_admin_menu` [ RunTime:0.002403s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_admin_menu` ORDER BY `list_order` ASC [ RunTime:0.001362s ]
+---------------------------------------------------------------
+[ 2018-07-12T13:32:40+08:00 ] 10.10.0.99 GET /admin/menu/add.html
+[ info ] 10.10.0.99:8365/admin/menu/add.html [运行时间：0.097266s][吞吐率：10.28req/s] [内存消耗：3,291.04kb] [文件加载：60]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/menu/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->add[ E:\job\template360\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\menu\add.php [ array (
+  0 => 'user',
+  1 => 'select_category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010782s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.001119s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_admin_menu` [ RunTime:0.002305s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_admin_menu` ORDER BY `list_order` ASC [ RunTime:0.001719s ]
+---------------------------------------------------------------
+[ 2018-07-12T13:47:14+08:00 ] 10.10.0.99 GET /admin/menu/add.html
+[ info ] 10.10.0.99:8365/admin/menu/add.html [运行时间：0.092068s][吞吐率：10.86req/s] [内存消耗：3,290.35kb] [文件加载：60]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/menu/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->add[ E:\job\template360\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\menu\add.php [ array (
+  0 => 'user',
+  1 => 'select_category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001309s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.001129s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_admin_menu` [ RunTime:0.002028s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_admin_menu` ORDER BY `list_order` ASC [ RunTime:0.001335s ]
+---------------------------------------------------------------
+[ 2018-07-12T14:00:33+08:00 ] 10.10.0.99 GET /admin/menu/add.html
+[ info ] 10.10.0.99:8365/admin/menu/add.html [运行时间：0.089131s][吞吐率：11.22req/s] [内存消耗：3,290.07kb] [文件加载：60]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/menu/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->add[ E:\job\template360\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\menu\add.php [ array (
+  0 => 'user',
+  1 => 'select_category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010399s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.001183s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000742s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_admin_menu` [ RunTime:0.001951s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_admin_menu` ORDER BY `list_order` ASC [ RunTime:0.001424s ]
+---------------------------------------------------------------
+[ 2018-07-12T14:32:55+08:00 ] 10.10.0.99 GET /admin/menu/add.html
+[ info ] 10.10.0.99:8365/admin/menu/add.html [运行时间：0.078242s][吞吐率：12.78req/s] [内存消耗：3,116.83kb] [文件加载：58]
+[ info ] [ LANG ] E:\job\template360\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8_unicode_ci; pmaUser-1=%7B%22iv%22%3A%22H9kCyfzd%5C%2FNWXramXIEQMBw%3D%3D%22%2C%22mac%22%3A%221af09e9eacbfd7fe0437e5042ad003c8bd5e00e0%22%2C%22payload%22%3A%22T0H6cwNoGUqF1egZSuL02A%3D%3D%22%7D; admin_username=admin; PHPSESSID=k4iofmmumqh8vjmh9dnsb7esl6; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://10.10.0.99:8365/admin/menu/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => '10.10.0.99:8365',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->add[ E:\job\template360\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] E:\job\template360\public/../application/admin\view\menu\add.php [ array (
+  0 => 'user',
+  1 => 'select_category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002264s ] mysql:host=127.0.0.1;port=3306;dbname=template360;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_user` [ RunTime:0.001975s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000972s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tpl_admin_menu` [ RunTime:0.001031s ]
+[ sql ] [ SQL ] SELECT * FROM `tpl_admin_menu` ORDER BY `list_order` ASC [ RunTime:0.001563s ]
