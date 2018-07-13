@@ -26,10 +26,10 @@
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
       <li class="layui-nav-item"><a href="">控制台</a></li>
-      <li class="layui-nav-item"><a href="">商品管理</a></li>
+      <li class="layui-nav-item"><a href="javascript:;" class="ajax-url" url="{:url('clear/cache')}">清空缓存</a></li>
       <li class="layui-nav-item"><a href="">用户</a></li>
       <li class="layui-nav-item">
-        <a href="javascript:;">其它系统</a>
+        <a href="javascript:;">其他操作</a>
         <dl class="layui-nav-child">
           <dd><a href="">邮件管理</a></dd>
           <dd><a href="">消息管理</a></dd>
@@ -42,36 +42,42 @@
         <a href="javascript:;">{$user['username']}</a>
         <dl class="layui-nav-child">
           <dd><a href="">基本资料</a></dd>
-          <dd><a href="">安全设置</a></dd>
+          <dd><a href="{:url('user/logout')}">安全退出</a></dd>
         </dl>
       </li>
-      <li class="layui-nav-item"><a href="{:url('user/logout')}">退出</a></li>
+<!--       <li class="layui-nav-item"><a href="{:url('user/logout')}">退出</a></li> -->
     </ul>
   </div>
   
-  <div class="layui-side layui-bg-black">
+  <div class="layui-side layui-bg-black layui-side-menu">
     <div class="layui-side-scroll">
-      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-        <li class="layui-nav-item layui-nav-itemed">
-          <a class="" href="javascript:;">基本设置</a>
+     
+      <ul class="layui-nav layui-nav-tree">
+      <?php $i=0; ?>
+      {foreach name="admin_menus" item="value"}
+        <li class="layui-nav-item {if condition="$i==0"}layui-nav-itemed{/if}"><?php $i++;?>
+          <a class="" href="javascript:;">{$value.name}</a>
           <dl class="layui-nav-child">
-            <dd><a href="{:url('Menu/index')}">菜单管理</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
-            <dd><a href="javascript:;">列表三</a></dd>
-            <dd><a href="">超链接</a></dd>
+          {if condition="isset($value['items']) && !empty($value['items'])"}
+          	{foreach name="value.items" item="child"}
+          	{if condition="!isset($child['items']) || empty($child['items'])"}
+          	<dd><a href="{$child.url}">{$child.name}</a></dd>
+          	{/if}
+            {if condition="isset($child['items']) && !empty($child['items'])"}
+                <dd><a href="javascript:;">{$child.name}</a></span>
+                    <dl class="layui-nav-child">
+               {foreach name="child.items" item="childSub"}
+                        <dd><a href="{$childSub.url}">{$childSub.name}</a></dd>
+               {/foreach} 
+                   </dl>
+                </dd>
+            {/if}
+            
+          	{/foreach}
+          {/if}
           </dl>
         </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;">管理员管理</a>
-          <dl class="layui-nav-child">
-            <dd><a href="{:url('user/index')}">管理员列表</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
-            <dd><a href="">超链接</a></dd>
-          </dl>
-        </li>
-        <li class="layui-nav-item"><a href="">云市场</a></li>
-        <li class="layui-nav-item"><a href="">发布商品</a></li>
+        {/foreach}
       </ul>
     </div>
   </div>

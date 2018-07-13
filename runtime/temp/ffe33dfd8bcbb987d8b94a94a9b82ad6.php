@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"E:\job\template360\public/../application/admin\view\menu\index.php";i:1531300104;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531293051;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:66:"E:\job\template360\public/../application/admin\view\menu\index.php";i:1531472663;s:57:"E:\job\template360\application\admin\view\public\base.php";i:1531465352;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,10 +29,10 @@
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
       <li class="layui-nav-item"><a href="">控制台</a></li>
-      <li class="layui-nav-item"><a href="">商品管理</a></li>
+      <li class="layui-nav-item"><a href="javascript:;" class="ajax-url" url="<?php echo url('clear/cache'); ?>">清空缓存</a></li>
       <li class="layui-nav-item"><a href="">用户</a></li>
       <li class="layui-nav-item">
-        <a href="javascript:;">其它系统</a>
+        <a href="javascript:;">其他操作</a>
         <dl class="layui-nav-child">
           <dd><a href="">邮件管理</a></dd>
           <dd><a href="">消息管理</a></dd>
@@ -45,36 +45,35 @@
         <a href="javascript:;"><?php echo $user['username']; ?></a>
         <dl class="layui-nav-child">
           <dd><a href="">基本资料</a></dd>
-          <dd><a href="">安全设置</a></dd>
+          <dd><a href="<?php echo url('user/logout'); ?>">安全退出</a></dd>
         </dl>
       </li>
-      <li class="layui-nav-item"><a href="<?php echo url('user/logout'); ?>">退出</a></li>
+<!--       <li class="layui-nav-item"><a href="<?php echo url('user/logout'); ?>">退出</a></li> -->
     </ul>
   </div>
   
-  <div class="layui-side layui-bg-black">
+  <div class="layui-side layui-bg-black layui-side-menu">
     <div class="layui-side-scroll">
-      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-        <li class="layui-nav-item layui-nav-itemed">
-          <a class="" href="javascript:;">基本设置</a>
+     
+      <ul class="layui-nav layui-nav-tree">
+      <?php $i=0; if(is_array($admin_menus) || $admin_menus instanceof \think\Collection || $admin_menus instanceof \think\Paginator): if( count($admin_menus)==0 ) : echo "" ;else: foreach($admin_menus as $key=>$value): ?>
+        <li class="layui-nav-item <?php if($i==0): ?>layui-nav-itemed<?php endif; ?>"><?php $i++;?>
+          <a class="" href="javascript:;"><?php echo $value['name']; ?></a>
           <dl class="layui-nav-child">
-            <dd><a href="<?php echo url('Menu/index'); ?>">菜单管理</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
-            <dd><a href="javascript:;">列表三</a></dd>
-            <dd><a href="">超链接</a></dd>
+          <?php if(isset($value['items']) && !empty($value['items'])): if(is_array($value['items']) || $value['items'] instanceof \think\Collection || $value['items'] instanceof \think\Paginator): if( count($value['items'])==0 ) : echo "" ;else: foreach($value['items'] as $key=>$child): if(!isset($child['items']) || empty($child['items'])): ?>
+          	<dd><a href="<?php echo $child['url']; ?>"><?php echo $child['name']; ?></a></dd>
+          	<?php endif; if(isset($child['items']) && !empty($child['items'])): ?>
+                <dd><a href="javascript:;"><?php echo $child['name']; ?></a></span>
+                    <dl class="layui-nav-child">
+               <?php if(is_array($child['items']) || $child['items'] instanceof \think\Collection || $child['items'] instanceof \think\Paginator): if( count($child['items'])==0 ) : echo "" ;else: foreach($child['items'] as $key=>$childSub): ?>
+                        <dd><a href="<?php echo $childSub['url']; ?>"><?php echo $childSub['name']; ?></a></dd>
+               <?php endforeach; endif; else: echo "" ;endif; ?> 
+                   </dl>
+                </dd>
+            <?php endif; endforeach; endif; else: echo "" ;endif; endif; ?>
           </dl>
         </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;">管理员管理</a>
-          <dl class="layui-nav-child">
-            <dd><a href="<?php echo url('user/index'); ?>">管理员列表</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
-            <dd><a href="">超链接</a></dd>
-          </dl>
-        </li>
-        <li class="layui-nav-item"><a href="">云市场</a></li>
-        <li class="layui-nav-item"><a href="">发布商品</a></li>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
       </ul>
     </div>
   </div>
@@ -98,24 +97,26 @@
               <button class="layui-btn layui-btn-primary" onclick="window.location.href='<?php echo url('add'); ?>'" data-type="add">添加菜单</button>
          </div>
         <div class="layui-card-body">
-          
-<table class="layui-table layui-form" id="treeTable">
-  <thead>
-    <tr>
-      <th>排序</th>
-      <th>ID</th>
-      <th>菜单名称</th>
-      <th>URL</th>
-      <th>状态</th>
-      <th>操作</th>
-    </tr> 
-  </thead>
-  <tbody>
-  <?php echo $category; ?>
-  </tbody>
-</table>
-          
-          
+        <form class="layui-form" action="<?php echo url('listorder'); ?>" method="post">
+        <table class="layui-table layui-form" id="treeTable">
+          <thead>
+            <tr>
+              <th>排序</th>
+              <th>ID</th>
+              <th>菜单名称</th>
+              <th>URL</th>
+              <th>状态</th>
+              <th>操作</th>
+            </tr> 
+          </thead>
+          <tbody>
+          <?php echo $category; ?>
+          </tbody>
+        </table>
+         <div class="layui-card-footer">
+              <button type="submit" lay-submit lay-filter="submit" class="layui-btn layui-btn-primary order-btn">排序</button>
+         </div>
+         </form>
         </div>
       </div>
     </div>
@@ -158,16 +159,16 @@ $(function(){
 			 $(this).removeClass('layui-icon-triangle-r');
 			 $(this).addClass('layui-icon-triangle-d');
 			 }else{
-				 $(this).removeClass('layui-icon-triangle-d');
-				 $(this).addClass('layui-icon-triangle-r');
+			 $(this).removeClass('layui-icon-triangle-d');
+			 $(this).addClass('layui-icon-triangle-r');
 		}
 	 });
 	
 });
 
-//监听指定开关
 	var form = layui.form;
-	form.on('switch(switchTest)', function(data){
+
+	form.on('switch(switchTest)',function(data){
 		if(this.checked){
 			var status = 1;
 		}else{
@@ -178,10 +179,22 @@ $(function(){
 			data:{id:data.value,status:status},success: function(res){
 				if(res.code == 0){
 					$(data.othis).addClass('layui-form-onswitch');
-					layer.msg(res.msg,{shade:0.3,icon:2,shift:6});
-					}
+					showMsg(res.msg);
+				}
 			}
 		});
+	});
+	
+	form.on('submit(submit)', function(data){
+		$('.order-btn').addClass('layui-btn-disabled').attr('disabled','disabled').text('更新中...');
+		$.ajax({
+			url:'<?php echo url("listorder"); ?>',type:'POST',
+			data:$('.layui-form').serialize(),success: function(res){
+				$('.order-btn').removeClass('layui-btn-disabled').removeAttr('disabled').text('更新');
+				showMsg(res.msg);
+			}
+		});
+		return false;
 	});
 
 

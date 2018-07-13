@@ -5,7 +5,7 @@ namespace app\admin\validate;
 use think\Validate;
 use think\Db;
 
-class AdminMenuValidate extends Validate
+class AdminMenu extends Validate
 {
     protected $rule = [
         'name'       => 'require',
@@ -31,10 +31,8 @@ class AdminMenuValidate extends Validate
     ];
 
     // 自定义验证规则
-    protected function checkParentId($value)
-    {
+    protected function checkParentId($value){
         $find = Db::name('AdminMenu')->where(["id" => $value])->value('parent_id');
-
         if ($find) {
             $find2 = Db::name('AdminMenu')->where(["id" => $find])->value('parent_id');
             if ($find2) {

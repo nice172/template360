@@ -49,6 +49,27 @@ $(function(){
         });
     });
 
+    //操作ajax
+    $('.ajax-url').click(function(){
+        var _this = $(this);
+        $.get(_this.attr('url'),{},function(res){
+            if (res.code == 1){
+                showMsg(res.msg, 1);
+                setTimeout(() => {
+                    if (res.data.reload == 1){
+                        window.location.reload();
+                        return;
+                    }
+                    if (res.url) {
+                        window.location.href = res.url;
+                    }
+                }, 2000);
+            }else{
+                showMsg(res.msg, 2);
+            }
+        });
+    });
+
 
 });
 

@@ -36,3 +36,6 @@ body{
     bottom: 0px !important;
     left: 0 !important;
 }
+.layui-side-menu .layui-nav-child .layui-nav-child a {
+    padding-left: 35px;
+}

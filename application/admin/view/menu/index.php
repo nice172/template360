@@ -11,24 +11,26 @@
               <button class="layui-btn layui-btn-primary" onclick="window.location.href='{:url('add')}'" data-type="add">添加菜单</button>
          </div>
         <div class="layui-card-body">
-          
-<table class="layui-table layui-form" id="treeTable">
-  <thead>
-    <tr>
-      <th>排序</th>
-      <th>ID</th>
-      <th>菜单名称</th>
-      <th>URL</th>
-      <th>状态</th>
-      <th>操作</th>
-    </tr> 
-  </thead>
-  <tbody>
-  {$category}
-  </tbody>
-</table>
-          
-          
+        <form class="layui-form" action="{:url('listorder')}" method="post">
+        <table class="layui-table layui-form" id="treeTable">
+          <thead>
+            <tr>
+              <th>排序</th>
+              <th>ID</th>
+              <th>菜单名称</th>
+              <th>URL</th>
+              <th>状态</th>
+              <th>操作</th>
+            </tr> 
+          </thead>
+          <tbody>
+          {$category}
+          </tbody>
+        </table>
+         <div class="layui-card-footer">
+              <button type="submit" lay-submit lay-filter="submit" class="layui-btn layui-btn-primary order-btn">排序</button>
+         </div>
+         </form>
         </div>
       </div>
     </div>
@@ -55,16 +57,16 @@ $(function(){
 			 $(this).removeClass('layui-icon-triangle-r');
 			 $(this).addClass('layui-icon-triangle-d');
 			 }else{
-				 $(this).removeClass('layui-icon-triangle-d');
-				 $(this).addClass('layui-icon-triangle-r');
+			 $(this).removeClass('layui-icon-triangle-d');
+			 $(this).addClass('layui-icon-triangle-r');
 		}
 	 });
 	
 });
 
-//监听指定开关
 	var form = layui.form;
-	form.on('switch(switchTest)', function(data){
+
+	form.on('switch(switchTest)',function(data){
 		if(this.checked){
 			var status = 1;
 		}else{
@@ -75,10 +77,22 @@ $(function(){
 			data:{id:data.value,status:status},success: function(res){
 				if(res.code == 0){
 					$(data.othis).addClass('layui-form-onswitch');
-					layer.msg(res.msg,{shade:0.3,icon:2,shift:6});
-					}
+					showMsg(res.msg);
+				}
 			}
 		});
+	});
+	
+	form.on('submit(submit)', function(data){
+		$('.order-btn').addClass('layui-btn-disabled').attr('disabled','disabled').text('更新中...');
+		$.ajax({
+			url:'{:url("listorder")}',type:'POST',
+			data:$('.layui-form').serialize(),success: function(res){
+				$('.order-btn').removeClass('layui-btn-disabled').removeAttr('disabled').text('更新');
+				showMsg(res.msg);
+			}
+		});
+		return false;
 	});
 
 

@@ -24,7 +24,7 @@ class AdminMenu extends Model {
         }
 
         //权限检查
-        if (cmf_get_current_admin_id() == 1) {
+        if (get_current_admin_id() == 1) {
             //如果是超级管理员 直接通过
             return $result;
         }
@@ -48,7 +48,7 @@ class AdminMenu extends Model {
 
                 $ruleName = strtolower($v['app'] . "/" . $v['controller'] . "/" . $action);
 //                print_r($ruleName);
-                if (cmf_auth_check(cmf_get_current_admin_id(), $ruleName)) {
+                if (auth_check(get_current_admin_id(), $ruleName)) {
                     $array[] = $v;
                 }
 
@@ -63,8 +63,7 @@ class AdminMenu extends Model {
      * @param string $parentId 菜单id
      * @return mixed|string
      */
-    public function subMenu($parentId = '', $bigMenu = false)
-    {
+    public function subMenu($parentId = '', $bigMenu = false){
         $array   = $this->getAdminMenu($parentId, 1);
         $numbers = count($array);
         if ($numbers == 1 && !$bigMenu) {
@@ -108,7 +107,7 @@ class AdminMenu extends Model {
 
                 if (strpos($app, 'plugin/') === 0) {
                     $pluginName = str_replace('plugin/', '', $app);
-                    $url        = cmf_plugin_url($pluginName . "://{$controller}/{$action}{$params}");
+                    $url        = plugin_url($pluginName . "://{$controller}/{$action}{$params}");
                 } else {
                     $url = url("{$app}/{$controller}/{$action}{$params}");
                 }
