@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2018-07-11 18:04:01
+Date: 2018-08-10 17:37:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,7 +36,7 @@ CREATE TABLE `tpl_admin_menu` (
   KEY `status` (`status`),
   KEY `parent_id` (`parent_id`),
   KEY `controller` (`controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 
 -- ----------------------------
 -- Records of tpl_admin_menu
@@ -60,8 +60,8 @@ INSERT INTO `tpl_admin_menu` VALUES ('16', '15', '2', '0', '10000', 'admin', 'Ma
 INSERT INTO `tpl_admin_menu` VALUES ('17', '15', '1', '0', '10000', 'admin', 'Mailer', 'template', '', '邮件模板', '', '邮件模板');
 INSERT INTO `tpl_admin_menu` VALUES ('18', '15', '2', '0', '10000', 'admin', 'Mailer', 'templatePost', '', '邮件模板提交', '', '邮件模板提交');
 INSERT INTO `tpl_admin_menu` VALUES ('19', '15', '1', '0', '10000', 'admin', 'Mailer', 'test', '', '邮件发送测试', '', '邮件发送测试');
-INSERT INTO `tpl_admin_menu` VALUES ('20', '6', '1', '0', '10000', 'admin', 'Menu', 'index', '', '后台菜单', '', '后台菜单管理');
-INSERT INTO `tpl_admin_menu` VALUES ('21', '20', '1', '0', '10000', 'admin', 'Menu', 'lists', '', '所有菜单', '', '后台所有菜单列表');
+INSERT INTO `tpl_admin_menu` VALUES ('20', '6', '1', '1', '10000', 'admin', 'Menu', 'index', '', '后台菜单', '', '后台菜单管理');
+INSERT INTO `tpl_admin_menu` VALUES ('21', '20', '1', '1', '10000', 'admin', 'Menu', 'index', '', '菜单列表', '', '后台所有菜单列表');
 INSERT INTO `tpl_admin_menu` VALUES ('22', '20', '1', '0', '10000', 'admin', 'Menu', 'add', '', '后台菜单添加', '', '后台菜单添加');
 INSERT INTO `tpl_admin_menu` VALUES ('23', '20', '2', '0', '10000', 'admin', 'Menu', 'addPost', '', '后台菜单添加提交保存', '', '后台菜单添加提交保存');
 INSERT INTO `tpl_admin_menu` VALUES ('24', '20', '1', '0', '10000', 'admin', 'Menu', 'edit', '', '后台菜单编辑', '', '后台菜单编辑');
@@ -202,6 +202,7 @@ INSERT INTO `tpl_admin_menu` VALUES ('158', '6', '1', '1', '10000', 'user', 'Adm
 INSERT INTO `tpl_admin_menu` VALUES ('159', '158', '1', '0', '10000', 'user', 'AdminUserAction', 'edit', '', '编辑用户操作', '', '编辑用户操作');
 INSERT INTO `tpl_admin_menu` VALUES ('160', '158', '2', '0', '10000', 'user', 'AdminUserAction', 'editPost', '', '编辑用户操作提交', '', '编辑用户操作提交');
 INSERT INTO `tpl_admin_menu` VALUES ('161', '158', '1', '0', '10000', 'user', 'AdminUserAction', 'sync', '', '同步用户操作', '', '同步用户操作');
+INSERT INTO `tpl_admin_menu` VALUES ('162', '0', '1', '1', '10000', 'admin', 'Test', 'index', 'id=100', '测试菜单', 'user', '备注信息');
 
 -- ----------------------------
 -- Table structure for tpl_auth_access
@@ -237,7 +238,7 @@ CREATE TABLE `tpl_auth_rule` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE,
   KEY `module` (`app`,`status`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
+) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
 
 -- ----------------------------
 -- Records of tpl_auth_rule
@@ -403,6 +404,7 @@ INSERT INTO `tpl_auth_rule` VALUES ('158', '1', 'user', 'admin_url', 'user/Admin
 INSERT INTO `tpl_auth_rule` VALUES ('159', '1', 'user', 'admin_url', 'user/AdminUserAction/edit', '', '编辑用户操作', '');
 INSERT INTO `tpl_auth_rule` VALUES ('160', '1', 'user', 'admin_url', 'user/AdminUserAction/editPost', '', '编辑用户操作提交', '');
 INSERT INTO `tpl_auth_rule` VALUES ('161', '1', 'user', 'admin_url', 'user/AdminUserAction/sync', '', '同步用户操作', '');
+INSERT INTO `tpl_auth_rule` VALUES ('162', '1', 'admin', 'admin_url', 'admin/Test/index', 'id=100', '测试菜单', '');
 
 -- ----------------------------
 -- Table structure for tpl_role
@@ -468,7 +470,7 @@ CREATE TABLE `tpl_user` (
 -- ----------------------------
 -- Records of tpl_user
 -- ----------------------------
-INSERT INTO `tpl_user` VALUES ('1', 'admin', 'efbe57ffc9b5e2bb2a468c6e7eee74a2', '874403', '13800138100', '354575573@qq.com', '1', '1', '1531122010', '10.10.0.99', '10.10.0.99', '1531290193');
+INSERT INTO `tpl_user` VALUES ('1', 'admin', 'efbe57ffc9b5e2bb2a468c6e7eee74a2', '874403', '13800138100', '354575573@qq.com', '1', '1', '1531122010', '10.10.0.99', '10.10.0.99', '1533893630');
 INSERT INTO `tpl_user` VALUES ('3', 'nice172', '6c405cbfe982411272581966dd083096', '603161', '13800138005', 'nice172@126.com', '1', '1', '1531122042', '10.10.0.99', '10.10.0.99', '1531290051');
 INSERT INTO `tpl_user` VALUES ('9', '&lt;script&gt;alert(\'js\');&lt;/script&gt;', 'fcf8dcfc9adc2f96bc40012a695278c0', '779904', '13800138003', 'admin126@126.com', '1', '1', '0', '', '', '0');
 INSERT INTO `tpl_user` VALUES ('14', 'admin996', '516c030014c87d271a7f14cd8d87001f', '0758ae', '13800138008', 'fasdaffbbb@126.com', '1', '0', '0', '', '', '0');

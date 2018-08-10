@@ -33,11 +33,11 @@ class Clear extends Base {
                                 $this->each($subPath);
                                 continue;
                             }
-                            if(!@unlink($path.$file)) $i++;
+                            if(@unlink($path.$file)) $i++;
                             
                         }
                     }
-                    if(!@rmdir($path.$file)) $i++;
+                    //if(!@rmdir($path.$file)) $i++;
                 }
             }
         }
