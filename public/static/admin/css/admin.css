@@ -11,8 +11,8 @@ body{
 
 .layadmin-header {
     display: block;
-    height: 50px;
-    line-height: 50px;
+    height: 42px;
+    line-height: 42px;
     margin-bottom: 0;
     border-radius: 0;
 }
@@ -38,4 +38,21 @@ body{
 }
 .layui-side-menu .layui-nav-child .layui-nav-child a {
     padding-left: 35px;
+}
+body .layui-layout-admin .site-demo{
+	bottom: 40px;
+    padding: 0;
+}
+.layui-layout-admin .site-demo-body{
+	top: 102px;
+}
+.header-demo{
+	height: 60px;
+    border-bottom: none;
+}
+.site-demo-title{
+	position: fixed;
+    left: 200px;
+    right: 0;
+    top: 60px;
 }

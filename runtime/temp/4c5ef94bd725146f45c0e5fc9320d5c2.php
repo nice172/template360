@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\job\template360\public/../application/admin\view\login\index.php";i:1531189937;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\job\template360\public/../application/admin\view\login\index.php";i:1536049795;}*/ ?>
 <!doctype html>
 <html lang="zh-cn">
 <head>
@@ -64,6 +64,12 @@ $(function(){
 
 	$('.verify').click(function(){
 		clickVerify();
+	});
+
+	$('.layui-form-item input').keyup(function(event){
+		if(event.keyCode == 13){
+			$('.layui-btn').click();
+		}
 	});
 	
 	$('.layui-btn').click(function(){

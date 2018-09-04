@@ -2,13 +2,16 @@
 namespace app\admin\controller;
 
 use think\Controller;
+use think\Session;
 use app\admin\model\User as userModel;
+use lib\Auth;
 
 // 控制器基类
 
 class Base extends Controller {
     
     protected $user;
+    protected $empty = '<tr><td colspan="20" align="center">当前列表没有查到数据</td></tr>';
     
     //初始化
     public function _initialize(){
@@ -31,6 +34,25 @@ class Base extends Controller {
         }
         
         $this->user = $user;
+        $request = \think\Request::instance();
+        define('MODULE_NAME', $request->module());
+        define('CONTROLLER_NAME', $request->controller());
+        define('ACTION_NAME', $request->action());
+        define('REQUEST_URL', $request->url());
+        if (!in_array($this->user['id'], config('AUTH_CONFIG')['NO_AUTH_USER'])){
+            $node = strtolower(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME);
+            if (!in_array($node, config('AUTH_CONFIG')['NO_AUTH_URL'])){
+                $auth = new Auth();
+                if(!$auth->check($node, $this->userinfo['id'])){
+                    if ($node == strtolower(MODULE_NAME).'/index/index'){
+                        Session::clear(); // 清除session值
+                        $this->redirect(url('Login/index'));
+                    }
+                    $this->error('您没有权限访问！');
+                }
+            }
+        }
+        
         $this->assign('user',$user);
         
         $admin_menus = cache('admin_menus');

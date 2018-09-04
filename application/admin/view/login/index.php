@@ -64,6 +64,12 @@ $(function(){
 	$('.verify').click(function(){
 		clickVerify();
 	});
+
+	$('.layui-form-item input').keyup(function(event){
+		if(event.keyCode == 13){
+			$('.layui-btn').click();
+		}
+	});
 	
 	$('.layui-btn').click(function(){
 		if($('input[name=username]').val() == ''){

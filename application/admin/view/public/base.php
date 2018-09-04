@@ -21,7 +21,8 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-  <div class="layui-header">
+  <div class="layui-header header header-demo">
+    <div class="layui-main">
     <div class="layui-logo">Template360</div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
@@ -47,6 +48,7 @@
       </li>
 <!--       <li class="layui-nav-item"><a href="{:url('user/logout')}">退出</a></li> -->
     </ul>
+    </div>
   </div>
   
   <div class="layui-side layui-bg-black layui-side-menu">
@@ -80,20 +82,27 @@
         {/foreach}
       </ul>
     </div>
+        
   </div>
   
-  <div class="layui-body">
-    <div class="layui-card layadmin-header">
-      <div class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
-        <a href="{:url('index/main')}">主页</a><span lay-separator="">/</span>
-        <a lay-href="">管理员管理</a><span lay-separator="">/</span>
-        <a><cite>管理员列表</cite></a>
+  <div class="layui-tab layui-tab-brief">
+  	  <div class="layui-tab-title site-demo-title">
+        <div class="layui-card layadmin-header">
+          <div class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
+            <a href="{:url('index/index')}">主页</a><span lay-separator="">/</span>
+            <a lay-href="">管理员管理</a><span lay-separator="">/</span>
+            <a><cite>管理员列表</cite></a>
+          </div>
+        </div>
+  	  </div>
+  	  
+  	<div class="layui-body layui-tab-content site-demo site-demo-body">
+        <!-- 内容主体区域 -->
+        <div style="padding:15px 0 0 0;">
+        {block name="main"}{/block}
+        </div>
       </div>
-    </div>
-    <!-- 内容主体区域 -->
-    <div style="padding: 15px;">
-    {block name="main"}{/block}
-    </div>
+  	  
   </div>
   
   <div class="layui-footer">
