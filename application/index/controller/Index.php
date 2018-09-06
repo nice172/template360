@@ -5,6 +5,10 @@ use think\Controller;
 
 class Index extends Controller {
     
+    public function _empty(){
+        $this->redirect(url('index'));
+    }
+    
     public function index(){
         
         session('user',['uid' => 100,'username' => 'nice172']);

@@ -67,6 +67,10 @@ class Base extends Controller {
         
     }
     
+    public function _empty(){
+        $this->redirect(url('index'));
+    }
+    
     
     /**
      *  排序 排序字段为list_orders数组 POST 排序字段为：list_order
