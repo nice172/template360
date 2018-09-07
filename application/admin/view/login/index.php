@@ -94,11 +94,11 @@ $(function(){
 				}
 				if(res.code == 1) {
 					layer.msg(res.msg,{shade:0.3,icon:1,shift:6});
-					//setTimeout(function(){window.location = res.url;},1500);
+					setTimeout(function(){window.location = res.url;},1500);
 				}else{
 					layer.msg(res.msg,{shade:0.3,icon:2,shift:6});
 					setTimeout(function(){
-						//window.location.reload();
+						window.location.reload();
 						},2000);
 				}
 			}
