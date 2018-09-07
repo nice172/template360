@@ -15,4 +15,8 @@ class Error extends Controller {
         $this->redirect(url('index/index'));
     }
     
+    public function _empty(){
+        
+    }
+    
 }

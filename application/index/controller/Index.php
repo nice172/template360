@@ -4,11 +4,7 @@ namespace app\index\controller;
 use think\Controller;
 
 class Index extends Controller {
-    
-    public function _empty(){
-        $this->redirect(url('index'));
-    }
-    
+        
     public function index(){
         
         echo $this->request->module();
@@ -23,7 +19,7 @@ class Index extends Controller {
     public function test(){
         
         print_r(session('user'));
-        
+        echo 'session';
         return;
         return $this->fetch();
     }

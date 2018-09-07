@@ -27,7 +27,6 @@ class HttpServer {
         // 定义应用目录
         define('BASE_PATH', dirname(__DIR__));
         define('APP_PATH',  BASE_PATH. '/application/');
-        // ThinkPHP 引导文件
         // 1. 加载基础文件
         require_once BASE_PATH.'/thinkphp/base.php';
     }
@@ -64,6 +63,16 @@ class HttpServer {
         
         foreach ($request->server as $key => $value){
             $_SERVER[strtoupper($key)] = $value;
+        }
+        if (isset($request->header['x-real-ip'])){
+            $_SERVER['REMOTE_ADDR'] = $request->header['x-real-ip'];
+        }
+        if ($_SERVER['PATH_INFO'] == '/'){
+            $_SERVER['PATH_INFO'] = '';
+        }
+        $_SERVER['PATH_INFO'] = str_replace('/index.php', '', $_SERVER['PATH_INFO']);
+        if (isset($_SERVER['X-REQUESTED-WITH'])){
+            $_SERVER['HTTP_X_REQUESTED_WITH'] = $_SERVER['X-REQUESTED-WITH'];
         }
         $_SERVER['SWOOLE_CLI'] = true;
         $_SERVER['SWOOLE_SERVER'] = $this->server;

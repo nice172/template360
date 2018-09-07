@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="__CSS__/login.css" />
 </head>
 <body>
-
 <div class="login-main">
 <h2>后台管理登录</h2>	
 	<div class="login">
@@ -47,7 +46,6 @@
           </div>
 		</form>
 	</div>
-
 </div>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="__LAYUI__/layui.all.js"></script>
@@ -96,11 +94,11 @@ $(function(){
 				}
 				if(res.code == 1) {
 					layer.msg(res.msg,{shade:0.3,icon:1,shift:6});
-					setTimeout(function(){window.location = res.url;},1500);
+					//setTimeout(function(){window.location = res.url;},1500);
 				}else{
 					layer.msg(res.msg,{shade:0.3,icon:2,shift:6});
 					setTimeout(function(){
-						window.location.reload();
+						//window.location.reload();
 						},2000);
 				}
 			}

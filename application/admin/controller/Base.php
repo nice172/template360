@@ -20,7 +20,7 @@ class Base extends Controller {
         //跳转登录
         if (empty(session('admin_user'))){
             $this->redirect(url('Login/index'));
-            exit;
+            return;
         }
         
         $sessionUser = session('admin_user');
@@ -30,7 +30,7 @@ class Base extends Controller {
         if (empty($user)) {
             session('admin_user',null);
             $this->redirect(url('Login/index'));
-            exit;
+            return;
         }
         
         $this->user = $user;
@@ -61,8 +61,7 @@ class Base extends Controller {
             $admin_menus = $adminMenu->getTree(0);
             cache('admin_menus',$admin_menus);
         }
-//         p($admin_menus);
-//         exit;
+        
         $this->assign('admin_menus',$admin_menus);
         
     }
