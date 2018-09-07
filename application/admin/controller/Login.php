@@ -15,6 +15,10 @@ class Login extends Controller {
         return $this->fetch();
     }
     
+    public function _empty(){
+        $this->redirect(url('index'));
+    }
+    
     /**
      * 登录
      */
