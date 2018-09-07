@@ -504,7 +504,6 @@ class App
             $module    = strip_tags(strtolower($result[0] ?: $config['default_module']));
             $bind      = Route::getBind('module');
             $available = false;
-
             if ($bind) {
                 // 绑定模块
                 list($bindModule) = explode('/', $bind);
@@ -518,7 +517,10 @@ class App
             } elseif (!in_array($module, $config['deny_module_list']) && is_dir(APP_PATH . $module)) {
                 $available = true;
             }
-
+            if ($available === false && !in_array($module, $config['common']['module_list'])){
+                $module = $config['default_module'];
+                $available = true;
+            }
             // 模块初始化
             if ($module && $available) {
                 // 初始化模块

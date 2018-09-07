@@ -11,6 +11,8 @@ class Index extends Controller {
     
     public function index(){
         
+        echo $this->request->module();
+        
         session('user',['uid' => 100,'username' => 'nice172']);
         
         return "";
