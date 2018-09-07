@@ -14,12 +14,12 @@ return [
     
     //模板替换
     'view_replace_str' => [
-        '__PUBLIC__'=>'http://10.10.0.99:8365/static',
-        '__IMG__' => 'http://10.10.0.99:8365/static/admin/images',
-        '__JS__' => 'http://10.10.0.99:8365/static/admin/js',
-        '__CSS__' => 'http://10.10.0.99:8365/static/admin/css',
-        '__LAYUI__' => 'http://10.10.0.99:8365/static/layui',
-        '__ROOT__' => 'http://10.10.0.99:8365/',
+        '__PUBLIC__'=>'/static',
+        '__IMG__' => '/static/admin/images',
+        '__JS__' => '/static/admin/js',
+        '__CSS__' => '/static/admin/css',
+        '__LAYUI__' => '/static/layui',
+        '__ROOT__' => '/',
     ]
     
 ];
