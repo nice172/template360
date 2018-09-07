@@ -18,7 +18,6 @@
 
 <div class="login-main">
 <h2>后台管理登录</h2>	
-	
 	<div class="login">
 		<form action="{:url('doLogin')}" class="layui-form" method="post" id="loginForm">
           {:token()}

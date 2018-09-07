@@ -44,7 +44,7 @@ class Think
         if (empty($this->config['view_path'])) {
             $this->config['view_path'] = App::$modulePath . 'view' . DS;
         }
-
+        
         $this->template = new Template($this->config);
     }
 
@@ -107,6 +107,12 @@ class Think
      */
     private function parseTemplate($template)
     {
+        if (isset($_SERVER['SWOOLE_CLI'])){
+            $view_path = App::$modulePath . 'view' . DS;
+            if ($this->config['view_path'] != $view_path){
+                $this->config['view_path'] = $view_path;
+            }
+        }
         // 分析模板文件规则
         $request = Request::instance();
         // 获取视图根目录
@@ -121,7 +127,7 @@ class Think
         } else {
             $path = isset($module) ? APP_PATH . $module . DS . 'view' . DS : $this->config['view_path'];
         }
-
+        
         $depr = $this->config['view_depr'];
         if (0 !== strpos($template, '/')) {
             $template   = str_replace(['/', ':'], $depr, $template);

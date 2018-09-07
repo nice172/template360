@@ -118,6 +118,7 @@ class View
         if (isset($options['type'])) {
             unset($options['type']);
         }
+        
         $this->engine = new $class($options);
         return $this;
     }
