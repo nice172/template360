@@ -37,7 +37,7 @@ layui.use('element', function(){
   var element = layui.element;
 });
 </script>
-{block name="script"}{/block}
+{block name="footer"}{/block}
 <script>
 {if condition="isset($close)"}
 showMsg('{$msg}',2);

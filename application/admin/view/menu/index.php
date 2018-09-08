@@ -1,5 +1,5 @@
 {extend name="public/base" /}
-{block name="head"}
+{block name="header"}
 <link rel="stylesheet" href="__PUBLIC__/js/treeTable/css/jquery.treetable.css" />
 {/block}
 {block name="main"}
@@ -38,7 +38,7 @@
 
 {/block}
 
-{block name="script"}
+{block name="footer"}
 <script type="text/javascript" src="__PUBLIC__/js/treeTable/jquery.treetable.js"></script>
 <script>
 

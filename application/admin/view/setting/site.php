@@ -1,0 +1,6 @@
+{extend name="public/base"}
+
+{block name="main"}
+
+
+{/block}

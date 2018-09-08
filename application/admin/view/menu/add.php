@@ -1,5 +1,5 @@
 {extend name="public/base" /}
-{block name="head"}
+{block name="header"}
 <style>/*.layui-form-select{width:300px;}*/.layui-word-aux-left{margin-left:110px;}</style>
 {/block}
 {block name="main"}
@@ -115,28 +115,22 @@
 </form>
 {/block}
 
-{block name="script"}
+{block name="footer"}
 
 <script>
-
-$(function(){
-
-});
-
 //监听指定开关
-	var form = layui.form;
-	form.on('submit(formDemo)', function(data){
-		$.post("{:url('doadd')}",data.field,function(res){
-			if(res.code == 1){
-				showMsg(res.msg,1,1);
-				setTimeout(() => {parent.window.location.reload();},2000);
-			}else{
-				showMsg(res.msg,2);
-			}
-		});
-
-	    return false;
+var form = layui.form;
+form.on('submit(formDemo)', function(data){
+	$.post("{:url('doadd')}",data.field,function(res){
+		if(res.code == 1){
+			showMsg(res.msg,1,1);
+			setTimeout(() => {parent.window.location.reload();},2000);
+		}else{
+			showMsg(res.msg,2);
+		}
 	});
 
+    return false;
+});
 </script>
 {/block}

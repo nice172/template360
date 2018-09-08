@@ -1,5 +1,5 @@
 {extend name="public/layer_base" /}
-{block name="head"}
+{block name="header"}
 <style>
 .layui-form-item .layui-form-label{width: 50px !important;}
 .layui-input-block{margin-left:80px !important;}
@@ -58,7 +58,7 @@
 </form>
 {/block}
 
-{block name="script"}
+{block name="footer"}
 <script>
 var form = layui.form;
 var layedit = layui.layedit;

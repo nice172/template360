@@ -13,7 +13,7 @@
 <title>Template360后台管理</title>
 <link rel="stylesheet" href="__LAYUI__/css/layui.css">
 <link rel="stylesheet" href="__CSS__/admin.css">
-{block name="head"}{/block}
+{block name="header"}{/block}
 <!--[if lt IE 9]>
   <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
   <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -119,6 +119,6 @@ layui.use('element', function(){
   var element = layui.element;
 });
 </script>
-{block name="script"}{/block}
+{block name="footer"}{/block}
 </body>
 </html>

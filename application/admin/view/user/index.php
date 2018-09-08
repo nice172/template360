@@ -67,7 +67,7 @@
 
 {/block}
 
-{block name="script"}
+{block name="footer"}
 <script>
 //监听指定开关
 	var form = layui.form;
