@@ -1,5 +1,5 @@
 $(function(){
-
+	var _window = this;
     // 打开iframe
     $('.openWindow').click(function(){
         var url = $(this).attr('url');
@@ -12,7 +12,7 @@ $(function(){
             width = sizeArr[0] + 'px';
             height = sizeArr[1] + 'px';
         }
-        layer.open({
+        var index = layer.open({
         type: 2,
         title: false,
         shade: 0.8,
@@ -20,7 +20,7 @@ $(function(){
         area: [width, height],
         fixed: true, //不固定
         maxmin: false, //放大缩小
-        content: [url,'yes'],
+        content: url
         });
 
     });

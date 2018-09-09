@@ -3,10 +3,10 @@
 <style>
 .layui-form-item .layui-form-label{width: 50px !important;}
 .layui-input-block{margin-left:80px !important;}
-.margin-bottom {margin-top:55px;margin-bottom:0px !important;}
 </style>
 {/block}
 {block name="main"}
+<div style="padding: 15px 20px 0 0;">
 <form class="layui-form" action="" lay-filter="example">
 	<input type="hidden" value="{$info.id}" name="id" />
   <div class="layui-form-item">
@@ -50,12 +50,15 @@
     </div>
   </div>
   
-  <div class="layui-form-item margin-bottom">
-    <div class="layui-input-block" style="margin-left:0px !important;">
-      <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="submit">立即提交</button>
-    </div>
+    <div class="footer-block">
+	<div class="footer-block-main">
+	<button class="layui-btn layui-btn-sm" type="submit" lay-submit lay-filter="submit">保 存</button>
+  <button type="button" class="layui-btn layui-btn-primary layui-btn-sm">取消</button>
   </div>
+  </div>
+  
 </form>
+</div>
 {/block}
 
 {block name="footer"}

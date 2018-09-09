@@ -23,9 +23,7 @@
 <div class="layui-layout layui-layout-admin">
   <div class="layui-body layer-body-main">
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;">
     {block name="main"}{/block}
-    </div>
   </div>
 </div>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>

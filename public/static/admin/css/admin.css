@@ -103,3 +103,16 @@ body .layui-layout-admin .site-demo{
 [lay-href], [lay-tips], [layadmin-event] {
     cursor: pointer;
 }
+
+.footer-block{
+	position: fixed;
+	bottom:0px;
+	height:43px;
+	width:100%;
+	text-align:right;
+}
+.footer-block .footer-block-main{
+	padding:0 15px;
+}
+
+
