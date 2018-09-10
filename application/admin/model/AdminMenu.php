@@ -118,6 +118,7 @@ class AdminMenu extends Model {
                     "icon"   => $a['icon'],
                     "id"     => $id . $app,
                     "name"   => $a['name'],
+                    "type" => $a['type'],
                     "parent" => $parent,
                     "url"    => $url,
                     'lang'   => strtoupper($app . '_' . $controller . '_' . $action)

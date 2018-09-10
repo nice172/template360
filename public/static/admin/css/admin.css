@@ -4,20 +4,20 @@
 }
 body{
     background: #f2f2f2;
-    font-size:12px;
+    font-size:14px;
     color: #666;
 }
 .layui-logo {font-size: 24px !important;color: #ffffff !important;}
 
 .layadmin-header {
     display: block;
-    height: 42px;
-    line-height: 42px;
+    height: 40px;
+    line-height: 40px;
     margin-bottom: 0;
     border-radius: 0;
 }
 .layadmin-header .layui-breadcrumb {
-    border-top: 1px solid #f6f6f6;
+    /*border-top: 1px solid #f6f6f6;*/
     padding: 0 15px;
 }
 .layuiadmin-card-header-auto {
@@ -44,7 +44,7 @@ body .layui-layout-admin .site-demo{
     padding: 0;
 }
 .layui-layout-admin .site-demo-body{
-	top: 102px;
+	top: 115px;
 }
 .header-demo{
 	height: 60px;
@@ -114,5 +114,48 @@ body .layui-layout-admin .site-demo{
 .footer-block .footer-block-main{
 	padding:0 15px;
 }
+.layuiadmin-card-list p.layuiadmin-big-font{
+	font-size: 36px;
+    color: #666;
+    line-height: 36px;
+    padding: 5px 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: nowrap;
+}
 
-
+table tr td a{
+	color:#06C;
+}
+.text-explode{
+	color: #CCC !important;
+    font-weight: normal !important;
+    margin: 0px 4px !important;
+}
+.index-layui-body{
+	top:101px !important;
+}
+.layui-layout-admin .layui-body .layadmin-tabsbody-item {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden
+}
+.layadmin-iframe{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.layui-layout-body{
+	overflow:auto;
+}
+.layui-main-content{
+	padding-top:13px;
+}

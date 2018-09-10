@@ -39,8 +39,8 @@ class Base extends Controller {
         define('CONTROLLER_NAME', $request->controller());
         define('ACTION_NAME', $request->action());
         define('REQUEST_URL', $request->url());
+        $node = strtolower(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME);
         if (!in_array($this->user['id'], config('AUTH_CONFIG')['NO_AUTH_USER'])){
-            $node = strtolower(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME);
             if (!in_array($node, config('AUTH_CONFIG')['NO_AUTH_URL'])){
                 $auth = new Auth();
                 if(!$auth->check($node, $this->userinfo['id'])){
@@ -61,14 +61,12 @@ class Base extends Controller {
             $admin_menus = $adminMenu->getTree(0);
             cache('admin_menus',$admin_menus);
         }
-        
         $this->assign('admin_menus',$admin_menus);
-        
     }
     
-    public function _empty(){
-        $this->redirect(url('index'));
-    }
+//     public function _empty(){
+//         $this->redirect(url('index'));
+//     }
     
     
     /**

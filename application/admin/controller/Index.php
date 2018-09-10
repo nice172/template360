@@ -8,4 +8,13 @@ class Index extends Base {
         return $this->fetch();
     }
     
+    public function home(){
+        
+        return $this->fetch();
+    }
+    
+    public function test(){
+        return $this->fetch();
+    }
+    
 }

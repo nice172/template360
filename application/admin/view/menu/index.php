@@ -1,9 +1,10 @@
 {extend name="public/base" /}
 {block name="header"}
 <link rel="stylesheet" href="__PUBLIC__/js/treeTable/css/jquery.treetable.css" />
+<style>.layui-form-switch{margin-top:0;}.layui-table td{padding-top:5px;padding-bottom:5px;}</style>
 {/block}
 {block name="main"}
-
+<div class="layui-fluid">
   <div class="layui-row layui-col-space15">
     <div class="layui-col-md12">
       <div class="layui-card">
@@ -35,7 +36,7 @@
       </div>
     </div>
   </div>
-
+</div>
 {/block}
 
 {block name="footer"}

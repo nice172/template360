@@ -3,6 +3,7 @@
 <style>/*.layui-form-select{width:300px;}*/.layui-word-aux-left{margin-left:110px;}</style>
 {/block}
 {block name="main"}
+<div class="layui-fluid">
 <form class="layui-form" action="">
   <div class="layui-row layui-col-space15">
 	
@@ -113,6 +114,7 @@
 
 </div>
 </form>
+</div>
 {/block}
 
 {block name="footer"}

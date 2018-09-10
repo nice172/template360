@@ -36,8 +36,8 @@ class Menu extends Base {
             $result[$key]['parent_id_node'] = ($value['parent_id']) ? ' data-tt-parent-id="node-' . $value['parent_id'] . '"' : '';
             $result[$key]['style'] = empty($value['parent_id']) ? '' : 'display:none;';
             $result[$key]['str_manage'] = '<a href="' . url("Menu/add", ["parent_id" => $value['id'], "menu_id" => $this->request->param("menu_id")])
-                . '">添加子菜单</a>  <a href="' . url("Menu/edit", ["id" => $value['id'], "menu_id" => $this->request->param("menu_id")])
-                . '">编辑</a>  <a class="js-ajax-delete" href="' . url("Menu/delete", ["id" => $value['id'], "menu_id" => $this->request->param("menu_id")]) . '">删除</a> ';
+                . '">添加子菜单</a> <span class="text-explode">|</span> <a href="' . url("Menu/edit", ["id" => $value['id'], "menu_id" => $this->request->param("menu_id")])
+                . '">编辑</a> <span class="text-explode">|</span> <a class="js-ajax-delete" href="' . url("Menu/delete", ["id" => $value['id'], "menu_id" => $this->request->param("menu_id")]) . '">删除</a>';
                 $result[$key]['status'] = $value['status'] ? '<input type="checkbox" checked="checked" value="'.$value['id'].'" name="open" lay-skin="switch" lay-filter="switchTest" title="显示">' : '<input type="checkbox" value="'.$value['id'].'" name="open" lay-skin="switch" lay-filter="switchTest" title="隐藏">';
             if (config('APP_DEBUG')) {
                 $result[$key]['app'] = $value['app'] . "/" . $value['controller'] . "/" . $value['action'];
