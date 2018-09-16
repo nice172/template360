@@ -120,8 +120,20 @@ layui.use('element', function(){
   var element = layui.element;
 });
 $(function(){
-
+var menuList = new Array();
 $('.createIframe').click(function(){
+	for(var i in menuList){
+		if($(this).attr('url') == menuList[i]){
+			var click_index = parseInt(i)+1;
+			var li = $('.layui-tab-title li');
+			var contentItem = $('.index-layui-body .layadmin-tabsbody-item');
+			li.removeClass('layui-this');
+			li.eq(click_index).addClass('layui-this');
+			contentItem.removeClass('layui-show').addClass('layui-hide');
+			contentItem.eq(click_index).removeClass('layui-hide').addClass('layui-show');
+			return;
+		}
+	}
 	$('.index-layui-body .layadmin-tabsbody-item').removeClass('layui-show').addClass('layui-hide');
     var html = '<div class="layadmin-tabsbody-item layui-show">';
 		html += '<iframe src="'+$(this).attr('url')+'" frameborder="0" class="layadmin-iframe"></iframe>';
@@ -129,24 +141,39 @@ $('.createIframe').click(function(){
 	$('.index-layui-body .app-content').before(html);
 	$('.layui-tab-title li').removeClass('layui-this');
 	$('.layui-tab-title li').last().after('<li class="layui-this">'+$(this).text()+'<i class="layui-icon layui-unselect layui-tab-close">ဆ</i></li>');
+	menuList.push($(this).attr('url'));
 });
-$('body').on('click','li .layui-tab-close',function(){
-	var obj = $('.layui-tab-title li');
-	var index = obj.index($(this).parent());
-	if(obj.eq(index).next().length > 0){
-		if(!$('.layui-tab-title li').hasClass('layui-this')){
-			obj.eq(index).next().addClass('layui-this');
+$('body').on('click','li .layui-tab-close',function(event){
+	if(event.target.nodeName == 'I'){
+		var obj = $('.layui-tab-title li');
+		var content = $('.index-layui-body .layadmin-tabsbody-item');
+		content.addClass('layui-hide');
+		var index = obj.index($(this).parent());
+		if(obj.eq(index).next().length > 0){
+			obj.removeClass('layui-this');
+			if(!$('.layui-tab-title li').hasClass('layui-this')){
+				obj.eq(index).next().addClass('layui-this');
+				content.eq(index).next().removeClass('layui-hide').addClass('layui-show');
+			}
+		}else{
+			obj.eq(index).prev().addClass('layui-this');
+			content.eq(index).prev().removeClass('layui-hide').addClass('layui-show');
 		}
-	}else{
-		obj.eq(index).prev().addClass('layui-this');
+		obj.eq(index).remove();
+		content.eq(index).remove();
+		var newList = new Array();
+		for(var i in menuList){
+			if(i != index-1) newList.push(menuList[i]);
+		}
+		menuList = newList;
 	}
-	obj.eq(index).remove();
-	$('.index-layui-body .layadmin-tabsbody-item').eq(index).remove();
 });
-$('body').on('click','.layui-tab-title li',function(){
-	var items = $('.index-layui-body .layadmin-tabsbody-item');
-	items.removeClass('layui-show').addClass('layui-hide');
-	items.eq($(this).index()).removeClass('layui-hide').addClass('layui-show');
+$('body').on('click','.layui-tab-title li',function(event){
+	if(event.target.nodeName == 'LI'){
+		var items = $('.index-layui-body .layadmin-tabsbody-item');
+		items.removeClass('layui-show').addClass('layui-hide');
+		items.eq($(this).index()).removeClass('layui-hide').addClass('layui-show');
+	}
 });
 
 });
