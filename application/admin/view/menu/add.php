@@ -1,9 +1,18 @@
 {extend name="public/base" /}
 {block name="header"}
-<style>/*.layui-form-select{width:300px;}*/.layui-word-aux-left{margin-left:110px;}</style>
+<style>/*.layui-form-select{width:300px;}*/.layui-word-aux-left{margin-left:110px;}
+.layui-card{border-radius:0;box-shadow:none;}</style>
 {/block}
 {block name="main"}
-<div class="layui-fluid">
+<div class="layui-fluid layui-main-content">
+    <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12">
+    <div class="layui-card">
+        <div class="layui-card-header layuiadmin-card-header-auto">
+        <span>新增菜单</span>
+        <button class="layui-btn layui-btn-primary right" onclick="window.history.go(-1)"><i class="layui-icon layui-icon-return"></i>返回</button>
+        </div>
+    <div class="layui-card-body">
 <form class="layui-form" action="">
   <div class="layui-row layui-col-space15">
 	
@@ -114,6 +123,10 @@
 
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
 </div>
 {/block}
 

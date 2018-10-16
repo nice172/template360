@@ -1,5 +1,4 @@
-{extend name="public/base"}
-
+{extend name="public/base" /}
 {block name="main"}
 <div class="layui-fluid layui-main-content">
     <div class="layui-row layui-col-space15">

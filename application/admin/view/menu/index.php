@@ -4,8 +4,8 @@
 <style>.layui-form-switch{margin-top:0;}.layui-table td{padding-top:5px;padding-bottom:5px;}</style>
 {/block}
 {block name="main"}
-<div class="layui-fluid">
-  <div class="layui-row layui-col-space15">
+<div class="layui-fluid layui-main-content">
+    <div class="layui-row layui-col-space15">
     <div class="layui-col-md12">
       <div class="layui-card">
         <div class="layui-card-header layuiadmin-card-header-auto">

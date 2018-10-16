@@ -1,11 +1,11 @@
 {extend name="public/base" /}
 {block name="main"}
 <div class="layui-fluid layui-main-content">
-  <div class="layui-row layui-col-space15">
+    <div class="layui-row layui-col-space15">
     <div class="layui-col-md12">
       <div class="layui-card">
         <div class="layui-card-header layuiadmin-card-header-auto">
-              <button class="layui-btn layui-btn-primary openWindow" window-size="400,450" url="{:url('adduser')}" data-type="add">新增管理员</button>
+              <a class="layui-btn layui-btn-primary" href="{:url('add')}">新增角色</a>
          </div>
         <div class="layui-card-body">
           
@@ -13,13 +13,10 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>用户名</th>
-      <th>所属分组</th>
-      <th>邮箱</th>
-      <th>最后登录IP</th>
-      <th>最后登录时间</th>
+      <th>角色名称</th>
+      <th>角色说明</th>
+      <th>排序</th>
       <th>状态</th>
-      <th>注册IP</th>
       <th>新增时间</th>
       <th>操作</th>
     </tr> 
@@ -64,7 +61,7 @@
       </div>
     </div>
   </div>
-    </div>
+  </div>
 {/block}
 
 {block name="footer"}
