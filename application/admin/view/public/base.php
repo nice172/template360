@@ -24,18 +24,32 @@
 {block name="main"}{/block}
 </div>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.form.js"></script>
 <script type="text/javascript" src="__LAYUI__/layui.all.js"></script>
 <script type="text/javascript" src="__JS__/common.js"></script>
+{block name="footer"}{/block}
 <script>
 layui.use('element', function(){
   var element = layui.element;
 });
 $(function(){
-$('.three-url').click(function(){
-	alert($(this).text());
-});
+    $('.three-url').click(function(){
+    	alert($(this).text());
+    });
+    $('.ajaxForm').submit(function(){
+		$(this).ajaxSubmit({
+			type: 'POST',
+			success: function(res){
+				if(res.code == 1){
+					showMsg(res.msg,1);
+				}else{
+					showMsg(res.msg,2);
+				}
+				}
+		});
+    	return false;
+    });
 });
 </script>
-{block name="footer"}{/block}
 </body>
 </html>

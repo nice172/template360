@@ -27,6 +27,7 @@
   </div>
 </div>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.form.js"></script>
 <script type="text/javascript" src="__LAYUI__/layui.all.js"></script>
 <script type="text/javascript" src="__JS__/common.js"></script>
 <script>
