@@ -131,6 +131,8 @@ $('.createIframe').click(function(){
 			li.eq(click_index).addClass('layui-this');
 			contentItem.removeClass('layui-show').addClass('layui-hide');
 			contentItem.eq(click_index).removeClass('layui-hide').addClass('layui-show');
+			//刷新iframe
+			contentItem.eq(click_index).find('iframe').attr('src',menuList[i]);
 			return;
 		}
 	}
